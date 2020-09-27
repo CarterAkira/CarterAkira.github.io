@@ -8,7 +8,7 @@
 # Site settings
 title: madaoheki的仓库
 brief-intro: 翻译和一些随笔
-baseurl: 
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://madaoheki.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
