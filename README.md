@@ -1,349 +1,455 @@
-# 关于这个博客主题
+## jekyll-theme-H2O
 
-随着 jekyll 的版本升级，同时我也想重构我的旧版博客主题，因此在这个月对博客进行了重构加改版，这个仓库存放我的新博客，并且我也会一直使用这个主题。目前基本改版完成，后续可能还会有些细节上的修补。
+基于Jekyll的博客主题模板，简洁轻量。
 
-**博客访问地址：[http://gaohaoyang.github.io/](http://gaohaoyang.github.io/)**。若您喜欢这个新的博客主题，请给我个star以示鼓励吧，欢迎大家使用。
+另外，还有此主题的[Ghost版本](https://github.com/eastpiger/ghost-theme-H2O) by [eastpiger](https://github.com/eastpiger)
 
-## 目录
+### Preview
 
-* [预览图](#预览图)
-* [各部分详情](#各部分详情)
-    * [主页 Home](#主页-home)
-    * [归档页 Archives](#归档页-archives)
-    * [分类页 Categories](#分类页-categories)
-    * [标签页 Tags](#标签页-tags)
-    * [收藏页 Collections](#收藏页-collections)
-    * [展示页 Demo](#展示页-demo)
-    * [关于页 About](#关于页-about)
-    * [评论](#评论)
-    * [目录 Contents](#目录-contents)
-    * [代码高亮](#代码高亮)
-    * [灯泡效果](#灯泡效果)
-    * [移动端适配](#移动端适配)
-    * [Footer](#footer)
-    * [统计](#统计)
-* [博客主题使用方法](#博客主题使用方法)
-    * [1. 安装 ruby 和 jekyll 环境](#1-安装-ruby-和-jekyll-环境)
-    * [2. 复制博客主题代码](#2-复制博客主题代码)
-    * [3. 修改参数](#3-修改参数)
-        * [基本信息](#基本信息)
-        * [链接信息](#链接信息)
-        * [评论信息](#评论信息)
-        * [统计信息](#统计信息)
-    * [4. 写文章](#4-写文章)
-    * [5. 本地运行](#5-本地运行)
-    * [6. 发布到 GitHub](#6-发布到-github)
-* [捐助 donate](#捐助-donate)
-* [Update Log](#update-log)
-* [License](#license)
+#### [在线预览 Live Demo →](http://liaokeyu.com/)
 
-## 预览图
+![](screenshot/jekyll-theme-h2o-realhome.jpg)
 
-先上预览图：
+![](screenshot/jekyll-theme-h2o-realm.png)
 
-主页
-![index](http://ww3.sinaimg.cn/large/7011d6cfjw1f3bdli86awj211k0oyqen.jpg)
+如果你喜欢这个博客模板，请在右上角star一下，非常感谢～
 
-文章页
-![post](http://ww4.sinaimg.cn/large/7011d6cfjw1f3bdmzb9v6j210p0j7gwn.jpg)
+If you like this theme or using it, please give a ⭐️ for motivation ;)
 
-## 各部分详情
+如果想体验手机浏览效果，可以扫一下二维码：
 
-### 主页 Home
+![](screenshot/1494404591.png)
 
-主页默认展示5篇文章的摘要部分，用户点击标题或阅读全文后进入文章页。右侧为近期文章、分类和标签3块区域，用户可以继续在这部分添加区域，只需修改`index.html`即可。
+Using your smartphone to scan the QR Code
 
-### 归档页 Archives
+### Features 特性
 
-按照年份归档文章。
+#### CN
 
-### 分类页 Categories
+- 代码高亮
+- 夜间模式
+- Disqus评论系统
+- 粉蓝两种主题色
+- 头图个性化底纹
+- 响应式设计
+- 社交图标
+- SEO标题优化
+- 文章标签索引
+- 博客文章搜索
+- 复制文章内容自动添加版权
 
-按照文章的分类，显示文章。
+#### EN
 
-### 标签页 Tags
+- Code highlight
+- Night mode
+- Disqus Comment System
+- Theme color: Blue & Pink
+- Hero Patterns
+- Responsive design
+- SNS Icon
+- Title SEO
+- Tags system
+- Search
+- Copyright text on copy event
 
-按照文章的标签显示文章。
+### Usage 快速开始
 
-### 收藏页 Collections
+首先你需要安装Jekyll，请查看文档: [快速指南](http://jekyll.com.cn/docs/quickstart/)
 
-本页是用`markdown`写的，用户可以收藏自己喜欢的文章链接。
+如果你已经安装了Jekyll，请检查版本是否为3.0.x，你可以使用 ```gem update jekyll``` 命令进行升级。
 
-### 展示页 Demo
+使用 ```gem install jekyll-paginate``` 或 ```sudo gem install jekyll-paginate``` 安装Jekyll的分页插件。
 
-使用 [Masonry](http://masonry.desandro.com/) 重写了瀑布流布局，响应式布局，更好的交互体验。
+> H2O主题基于Jekyll 3.2.1版本，不同版本之间可能存在部分差异，具体请参考[官方更新文档](https://jekyllrb.com/news/)
 
-### 关于页 About
+点击右上角Fork按钮在你的Github上创建分支，或者```clone```到本地。
 
-对个人和对本站的介绍，使用`markdown`写的。
+``` git clone https://github.com/kaeyleo/jekyll-theme-H2O.git ```
 
-### 评论
+最后，在命令行输入 ```jekyll server``` 开启服务，就能在本地预览主题了。
 
-支持 [多说评论](http://duoshuo.com/) 和 [disqus](https://disqus.com/) 评论。
+如果需要部署到线上环境，请参照配置文档的 **开始** 章节进行操作。
 
-只需要在 `_config.yml` 修改相应的配置`short_name`即可，如下：
+### Document 配置文档
 
-```yml
-# comments
-# two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #xxx
-disqus_shortname: xxx
-```
+#### CN
 
-### 目录 Contents
+- 开始
+	- [站点信息](#站点信息)
+	- [写一篇文章](#写一篇文章)
+- 组件
+	- [导航](#导航)
+	- [侧边栏](#侧边栏)
+	- [社交图标](#社交图标)
+	- [个人简介](#个人简介)
+	- [标签](#标签)
+	- [文章搜索](#文章搜索)
+	- [代码高亮](#代码高亮)
+	- [夜间模式](#夜间模式)
+- 个性化
+	- [博客封面、主题皮肤](#主题皮肤)
+	- [头图底纹](#头图底纹)
+- 高级部分
+	- [自定义](#自定义)
+- 集成服务
+	- [Disqus](#disqus)
+	- [Share.js](#sharejs)
 
-页面滚动时目录固定在屏幕右侧，若目录高度超出屏幕高度，目录产生滚动条。
+#### EN
 
-### 代码高亮
+- Get Started
+	- [Site Settings](#站点信息)
+	- [Write Posts](#写一篇文章)
+- Components
+	- [Navigation Menu](#导航)
+	- [Sidebar](#侧边栏)
+	- [SNS Icons](#社交图标)
+	- [Personal Information](#个人简介)
+	- [Tags](#标签)
+	- [Search](#文章搜索)
+	- [Syntax Highlight](#代码高亮)
+	- [Night Mode](#夜间模式)
+- Style
+	- [Theme Color](#主题皮肤)
+	- [Hero Background Patterns](#头图底纹)
+- Advanced
+	- [Customization](#自定义)
+- Plugins
+	- [Disqus](#Disqus)
+	- [Share.js](#Share.js)
 
-随着 jekyll 的升级，目前代码高亮使用风格与 github 上的 markdown 写法一致。
 
-### 灯泡效果
+You can easily get started by modifying _config.yml
 
-![light](http://ww3.sinaimg.cn/large/7011d6cfjw1f3be6y4vp3j209i02rweg.jpg)
+#### 站点信息
 
-可以看到导航按钮高亮时，下面的阴影效果，我把这个称为灯泡效果。
-
-### 移动端适配
-
-完美适配移动端。
-
-![mobile](http://ww4.sinaimg.cn/large/7011d6cfjw1f3bebnzxkpj20ah0fzgp4.jpg)
-
-### Footer
-
-**欢迎使用这个主题，使用时请保留 footer 上的模板主题来源。**Theme designed by [HyG](https://github.com/gaohaoyang).
-![footer](http://ww3.sinaimg.cn/large/7011d6cfjw1f3bepd8002j20hl02ct95.jpg)
-
-关于旧版博客，我不再维护，同时我把代码转移到了另一个仓库，见 [Gaohaoyang/old-blog](https://github.com/Gaohaoyang/old-blog)。
-
-### 统计
-
-博客支持百度统计和 Google Analytics，只需在`_config.yml`中配置响应的id即可，代码如下。
-
-```yml
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
-# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
-# xxxxx字符串
-baidu_tongji_id: xxxxxxxxxxxx
-google_analytics_id: UA-xxxxxxxx # google 分析追踪id
-```
-
-## 博客主题使用方法
-
-欢迎使用这个主题，以下简单说一下使用方法。
-
-### 1. 安装 ruby 和 jekyll 环境
-
-这一步和第5步主要是为了让博客系统在本地跑起来，如果不想在本地运行，可以无视这两步，但我还是强烈建议试着先在本地跑起来，没有什么问题后再推送的 GitHub 上。
-
-Windows 用户可以直接使用 [RubyInstaller](http://rubyinstaller.org/) 安装 ruby 环境。后续的操作中可能还会提示安装 DevKit，根据提示操作即可。
-
-建议使用 [RubyGems 镜像- Ruby China](https://gems.ruby-china.org/) 安装 jekyll。
-
-安装 jekyll 命令如下
+你可以通用修改 `_config.yml` 文件来轻松的开始搭建自己的博客
 
 ```
-gem install jekyll
-```
-
-详情可以查看 jekyll 官网。[https://jekyllrb.com/](https://jekyllrb.com/) 或 中文翻译版 jekyll 官网[http://jekyllcn.com/](http://jekyllcn.com/) （中文文档翻译落后于英文官网，有兴趣有时间的小伙伴可以参与翻译，为开源世界贡献一份力哦~）
-
-![jekyll logo](http://jekyllcn.com/img/logo-2x.png)
-
-### 2. 复制博客主题代码
-
-可以直接 clone 、下载 或 fork 这个仓库的代码即可
-
-### 3. 修改参数
-
-主要修改 `_config.yml` 中的参数和自己的网站小图`favicon.ico`
-
-`_config.yml`文件中
-
-#### 基本信息
-
-主要用于网站头部header。
-
-```yml
 # Site settings
-title: HyG
-brief-intro: Front-end Dev Engineer
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://gaohaoyang.github.io" # the base hostname & protocol for your site
+title: '廖柯宇的独立博客' # 你的博客网站标题
+description: '很高兴能在这里与你分享我对技术和生活的思考。' # 站点描述
+keyword: '廖柯宇, 廖柯宇的独立博客, 前端, 设计' # 网站关键词
+url: 'http://liaokeyu.com' # 站点url
+baseurl: ''
+
+# Build settings
+paginate: 6 # 一页放几篇文章
+paginate_path: 'page:num'
 ```
 
-#### 链接信息
+其实大部分参数已经默认配置好了，你只需要通过文档了解它们，然后根据自己的需求去`_config.yml`文件里修改即可。
 
-主要用于网站底部footer。
+#### 写一篇文章
 
-```yml
-# other links
-twitter_username: gaohaoyang126
-facebook_username: gaohaoyang.water
-github_username:  Gaohaoyang
-email: gaohaoyang126@126.com
-weibo_username: 3115521wh
-zhihu_username: gaohaoyang
-
-description_footer: 本站记录我前端之旅的沿途风景！
-```
-
-#### 评论信息
-
-获取`short_name`的方法：
-
-访问 https://disqus.com/ 或 http://duoshuo.com/ 根据提示操作即可。
-
-```yml
-# comments
-# two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #hygblog
-disqus_shortname: gaohaoyang
-```
-
-运行成功后，可以在 disqus 或 多说 的后台管理页看到相关信息。
-
-#### 统计信息
-
-获取 百度统计id 或 Google Analytics id 的方法：
-
-访问 http://tongji.baidu.com/ 或 https://www.google.com/analytics/ 根据提示操作即可。当然，如果不想添加统计信息，这两个参数可以不填。
-
-```yml
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
-# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
-# xxxxx字符串
-baidu_tongji_id: cf8506e0ef223e57ff6239944e5d46a4
-google_analytics_id: UA-72449510-4 # google 分析追踪id
-```
-
-成功后，进入自己的百度统计或 Google Analytics 后台管理，即可看到网站的访问量、访客等相关信息。
-
-### 4. 写文章
-
-`_posts`目录下存放文章信息，文章头部注明 layout(布局)、title、date、categories、tags、author(可选)，如下：
+文章一般都放在`_posts`文件夹里，每篇文章的开头都需要设置一些头信息：
 
 ```
 ---
 layout: post
-title:  "对这个 jekyll 博客主题的改版和重构"
-date:   2016-03-12 11:40:18 +0800
-categories: jekyll
-tags: jekyll 端口 markdown Foxit RubyGems HTML CSS
-author: Haoyang Gao
+title: 'H2O theme for Jekyll'
+subtitle: '或许是最漂亮的Jekyll主题'
+date: 2017-04-18
+categories: 技术
+cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
+tags: jekyll 前端开发 设计
 ---
 ```
 
-下面这两行代码为产生目录时使用
-```
-* content
-{:toc}
-```
+#### 导航
 
-文章中存在的4次换行为摘要分割符，换行前的内容会以摘要的形式显示在主页Home上，进入文章页不影响。
-
-换行符的设置见配置文件`_config.yml`的 excerpt，如下：
-
-```yml
-# excerpt
-excerpt_separator: "\n\n\n\n"
-```
-
-使用 markdown 语法写文章。
-
-代码风格与 GitHub 上 README 或 issue 中的一致。使用3个```的方式。
-
-### 5. 本地运行
-
-本地执行
+博客顶部的导航栏信息需要以下面的格式进行配置：
 
 ```
-jekyll s
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
 ```
 
-显示
+导航链接需要写上完整的html文件名，它们都是放于根目录下的，如果自建文件夹，请务必在`exclude` 参数中增加自建文件夹的文件名:
 
 ```
-Configuration file: E:/GitWorkSpace/blog/_config.yml
-            Source: E:/GitWorkSpace/blog
-       Destination: E:/GitWorkSpace/blog/_site
- Incremental build: disabled. Enable with --incremental
-      Generating...
-                    done in 6.33 seconds.
-  Please add the following to your Gemfile to avoid polling for changes:
-    gem 'wdm', '>= 0.1.0' if Gem.win_platform?
- Auto-regeneration: enabled for 'E:/GitWorkSpace/blog'
-Configuration file: E:/GitWorkSpace/blog/_config.yml
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
+# Build settings
+exclude: ['node_modules', 'dev', 'package.json', '自定义的文件夹名字']
 ```
 
-在本地访问 localhost:4000 即可看到博客主页。
+这样做是为了在Jekyll运行时排除某些文件被复制到运行文件`_site`里去。
 
-若安装了 Foxit 福昕pdf阅读器可能会占用4000端口，关闭 Foxit服务 或切换 jekyll 端口即可解决。详情见文章：[对这个 jekyll 博客主题的改版和重构](http://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/)
+#### 侧边栏
 
-若正在使用全局代理，可能会报错502，关闭全局代理即可。
+![](screenshot/jekyll-theme-h2o-sideBar.png)
 
-### 6. 发布到 GitHub
+侧边栏分为两个部分：【个人简介】和【推荐标签】。当屏幕宽度小于960px时，侧边栏会被隐藏。
 
-没什么问题，推送到自己的博客仓库即可。
+#### 社交图标
 
-## 捐助 donate
+使用阿里的图标管理平台Iconfont整理了一套常用的社交图标用于博客的个人简介上，包括微博、知乎、掘金、简书、Github等十三个网站，并且对鼠标悬停时的样式颜色进行了优化。
 
-您也可以捐助我喝杯咖啡！感谢！
+配置格式如下：
 
-支付宝
+```
+# SNS settings 配置社交网站url
+sns:
+  weibo: '//weibo.com/lovecolcol'
+  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
+  instagram: '//www.instagram.com/steveliaocn'
+  github: '//github.com/kaeyleo'
+```
 
-![alipay](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bk8ikzoij20740743z5.jpg)
+sns属性可选参数：
 
-微信
+社交网站 | 参数
+--------|----
+微博 | `weibo`
+推特 | `twitter`
+Github | `github`
+知乎 | `zhihu`
+掘金 | `juejin`
+豆瓣 | `douban`
+简书 | `jianshu`
+UI中国 | `uicn`
+领英 | `linkedin`
+Facebook | `facebook`
+Youtube | `youtube`
+Instagram | `instagram`
+Dribbble | `dribbble`
+Behance | `behance`
+Medium | `medium`
+VK | `vk`
 
-![wechat](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bkdw3bslj206z06q3z6.jpg)
+#### 个人简介
 
-感谢捐助的小伙伴！！！
+首页侧边栏和文章页面底部都会显示你的个人简介
 
-* 2016.05.08 收到 1057 ¥10.57 捐赠
-* 2016.05.07 收到 吴林 ¥2 捐赠
-* 2016.04.29 收到 北归 ¥10 捐赠
-* 2016.04.28 收到 魏楚阳_Brian ¥2 捐赠
-* 2016.04.28 收到 薛彬 ¥8.8 捐赠
+```
+# Author 配置博主信息
+author: 'Jack'
+nickname: 'xx'
+bio: '程序员'
+avatar: 'assets/img/avatar.jpg'
+```
+
+#### 标签
+
+对侧边栏的标签模块进行相应配置：
+
+```
+# Tags
+recommend-tags: true
+recommend-condition-size: 12
+
+```
+
+Tags配置说明：
+
+ 属性 | 参数 | 描述
+-----|-----|-------
+`recommend-tags` | `true`, `false` | 是否显示推荐标签
+`recommend-condition-size` | `12` 或其他数字 | 推荐标签个数限制
+
+#### 文章搜索
+
+![](screenshot/jekyll-theme-h2o-search.png)
+
+基于Jekyll服务器生成文章索引文件 `search.json` 为博客提供搜索服务。输入文章标题或与文章标签相关的关键字即可。
+
+搜索功能默认是开启的，以卡片的样式显示在侧边栏底部。如需关闭请将配置文件 `_config.yml` 中 `search ` 属性的值改为 `false` 。
+
+```
+# Search
+search: true
+```
+
+说明 | 参数
+----|-----
+开启搜索功能 | `true`
+关闭搜索功能 | `false`
+
+#### 代码高亮
+
+模板引入了[Prism.js](http://prismjs.com)，一款轻量、可扩展的代码语法高亮库。
+
+很多知名网站如[MDN](https://developer.mozilla.org/)、[css-tricks](https://css-tricks.com/)也在用它，就连 JavaScript 之父 [Brendan Eich](https://brendaneich.com/) 也在个人博客上使用。
+
+![代码高亮](http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png)
+
+遵循 [HTML5](https://www.w3.org/TR/html5/grouping-content.html#the-pre-element) 标准，Prism 使用语义化的 `<pre>` 元素和 `<code>` 元素来标记代码区块：
+
+```
+<pre><code class="language-css">p { color: red }</code></pre>
+```
+
+在Markdown中你可以这样写：
 
 
-## Update Log
+	 ```css
+		p { color: red }
+	 ```
 
-### 2016.5.11 v2.0.1
+支持语言：
 
-* `[^]` 优化代码，将页面中的大段评论相关代码抽离出来，放入`comments.html`
-* `[+]` 添加百度统计和Google分析代码，在`_config.yml`中配置相关参数即可
-* `[+]` 更新文档，添加博客主题使用方法，便于上手
-* `[+]` 添加了`favicon.ico`
-* `[^]` 修复 bug，目录太长时，滚动到最底部时隐藏到footer下面。修复后长目录在滚动到底部时使用`position:absolute`
-* `[^]` 修改目录区的滚动条样式（仅针对`webkit`内核浏览器）
-* `[^]` 修改 demo 页中 disqus 评论区 a 标签的颜色 bug，修改 blockqoute 中 p 标签的 margin
-* `[+]` 添加不蒜子计数功能，在footer上显示访问量
-* `[+]` 添加回到顶部功能
+- HTML
+- CSS
+- Sass
+- JavaScript
+- CoffeeScript
+- Java
+- C-like
+- Swift
+- PHP
+- Go
+- Python
 
-### 2016.4.27 v2.0.0
+#### 夜间模式
 
-* `[^]` 基于 jekyll 3.1.2 重构了所有代码
-* `[+]` 主页添加了摘要，在正文中使用4个换行符来分割，可在`_config.yml`中修改
-* `[+]` 主页添加了近期文章、分类列表和标签云
-* `[+]` 主页导航区做了视觉优化，阴影效果
-* `[+]` 增加了归档、标签和分类页面
-* `[+]` 增加了收藏页面
-* `[+]` 评论插件可以选择 disqus 或 多说，直接在`_config.yml`中修改
-* `[+]` 适配移动端
-* `[+]` 页面滚动时，文章目录固定在右侧
-* `[+]` 页面内容较少时，固定 footer 在页面底部
-* `[^]` 使用 GitHub 风格的代码高亮写法，即\`\`\`的写法，去除`highlight.js`代码高亮插件的使用
-* `[^]` 使用 Masonry 重写了 Demo 页中的瀑布流布局，响应式交互体验更好
-* `[-]` 去除了 jQuery 和 BootStrap，使得加载速度更快
+晚11点至次日凌晨6点自动开启夜间模式。如果不需要，则将配置文件 `_config.yml` 中 `nightMode ` 属性的值改为 `false` 即可。
 
-## License
+```
+# Night mode
+nightMode: true
+```
 
-[MIT License](https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/LICENSE.md)
+说明 | 参数
+----|-----
+开启夜间模式 | `true`
+关闭夜间模式 | `false`
+
+#### 主题皮肤
+
+![](screenshot/jekyll-theme-h2o-themecolor.jpg)
+
+支持两种主题颜色蓝色（默认）和粉色
+
+主要效果体现在首页博客封面、顶部导航栏的logo以及鼠标悬停时文字显示的颜色效果。
+
+```
+# theme color
+theme-color: 'default' # pink or default
+```
+
+颜色 | 参数
+----|-----
+蓝色 | `default`
+粉色 | `pink`
+
+如果你希望在博客封面显示图片，需要去index.html文件中的头信息中添加 `header-img` 配置：
+
+```
+---
+layout: default
+home-title: Steven的博客
+description: 开发者，创造者
+header-img: assets/img/banner.jpg
+---
+```
+
+#### 头图底纹
+
+![](screenshot/jekyll-theme-h2o-heroPatterns.png)
+
+在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。六种底纹（电路、食物、云海、钻石等等）供你选择，配置如下：
+
+```
+# Hero background patterns
+postPatterns: 'circuitBoard'
+```
+
+`postPatterns` 属性参数配置：
+
+底纹描述  |  参数
+------|------
+电路 | `circuitBoard`
+圆环 | `overlappingCircles`
+吃货日常：啃打鸡 | `food`
+土豪必备：钻石| `glamorous`
+圈圈叉叉 | `ticTacToe`
+中国风：云海 | `seaOfClouds`
+
+#### 自定义
+
+主题开发使用的技术栈也比较简单：引入jQuery类库、使用Sass代替CSS编写样式，使用Gulp完成Sass的编译、CSS和JavaScript的代码合并压缩等任务。
+
+如果你喜欢折腾，想对模板的代码进行修改，需要使用命令 `npm install` 安装 `package.json` 中的依赖，然后 `gulp` 一下即可开始你的自定义之旅。
+
+在了解H2O主题的目录结构之前，确保你对[Jekyll目录结构](http://jekyll.com.cn/docs/structure/)有所了解。
+
+```
+	.
+	├── _config.yml # 配置文件
+	├── _includes # 页面组件方便重用
+	|   ├── footer.html # 页脚
+	|   └── head.html # html文档的头部内容
+	|   └── header.html # 顶部菜单栏
+	|   └── pageNav.html # 文章列表分页组件
+	├── _layouts # 布局模板
+	|   ├── default.html # 默认模板
+	|   └── post.html # 文章页面模板
+	├── _posts # 这里放文章
+	|   ├── 2017-05-03-elements-of-javascript-style.md # 命名格式：年-月-日-文章标题.md
+	|   └── 2007-02-21-life-on-mars.md
+	├── _site # Jekyll将源码处理后生成的站点文件，里面的内容可直接发布
+	├── assets # 存放用于线上环境的静态资源，如需修改css和js文件请到dev文件夹
+	|   ├── css # dev文件夹中sass编译后的样式文件
+	|   └── fonts # 字体文件
+	|   └── icons # 图标文件
+	|   └── img #  图片文件
+	|   └── js # dev文件夹中处理后的脚本文件
+	├── dev # 开发文件
+	|   ├── js # 存放脚本源码
+	|   └── sass # 样式源码
+	|       └── app.scss # 整合下面的所有样式文件
+	|       └── base.scss # 引入字体、Reset部分样式
+	|       └── common.scss # 模板的主要样式
+	|       └── helper.scss # 工具样式
+	|       └── layouts.scss # 响应式布局
+	└── gulpfile.js # 自动化任务脚本
+	└── index.html # 模板首页
+	└── tags.html # 标签页面
+	└── 404.html # 404页面
+	└── package.json # 管理项目的依赖项
+```
+
+值得注意的是，css及js的源码都在 `dev` 文件夹中，每一次保存 gulp 都会对它们进行处理并保存到 `assets` 文件夹以供 `_site` 上线环境使用。
+
+#### Disqus
+
+[Disqus](https://disqus.com/)是一个第三方社交评论插件，体验相当不错。
+
+在配置文件 `_config.yml` 中找到comments的相关配置，设置 `disqus` 参数为 `true` 打开评论功能（ `false` 为关闭），并且设置 `disqus_url`。
+
+```
+# Comments
+comments:
+	disqus: true
+	disqus_url: 'https://your-disqus-username.disqus.com/embed.js'
+```
+
+注：`disqus` 默认值为 `false`
+
+#### Share.js
+
+为了让文章更方便地分享，使用了第三方分享插件[Share.js](https://github.com/overtrue/share.js)，支持一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
+
+```
+# Share
+social-share: true # 开启或者关闭分享功能
+social-share-items: ['wechat', 'weibo', 'douban','twitter']
+```
+
+### Contribution 贡献
+
+Any types of contribution are welcome. Thanks.
+
+接受各种形式的贡献，包括不限于提交问题与需求，修复代码。等待您的 ```Pull Request```
+
+#### 感谢参与代码贡献的伙伴
+
+- [Ray-Eldath](https://github.com/Ray-Eldath)
+- [sctop](https://github.com/sctop)
+- [bananaappletw](https://github.com/bananaappletw)
+- [moycat](https://github.com/moycat)
+
+### License 许可证
+
+Jekyll-Theme-H2O is licensed under [MIT](https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/LICENSE).
