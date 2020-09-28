@@ -1,58 +1,82 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: madaoheki的仓库
-brief-intro: 翻译和一些随笔
+subtitle: 
+keywords: 
+description: 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://madaoheki.github.io" # the base hostname & protocol for your site
+url: "https://www.madaoheki.github.io" # 你的域名
+page_no_title: "oukohou's blog" # 文章无标题时默认显示内容
 
-permalink: /:year/:month/:day/:title/
 
-# other links
-twitter_username: 
-facebook_username: 
-github_username:  
-email: 
-weibo_username: 
-zhihu_username: 
-
-description_footer: 本站记录生活的碎片
-
-# comments
-# two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #hygblog
-disqus_shortname: gaohaoyang
-
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
-# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
-# xxxxx字符串
-baidu_tongji_id: cf8506e0ef223e57ff6239944e5d46a4
-google_analytics_id: UA-72449510-4 # google 分析追踪id
 
 # Build settings
-markdown: kramdown
+permalink: /:year/:month/:day/:title/
+exclude: ["README.md", "changelog.md", "server", "tools", "Pipfile"]
+plugins:
+  - jekyll-paginate
+  - jemoji
 
+
+# always get github's error email saying redcarpet is not supported,
+# so change it to kramdown.
+markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
 
-# port
-# port: 1234
 
-# url
-category_dir: category/
-tag_dir: tag/
+# Pageinate settings
+paginate: 8 # 分页大小
+paginate_path: "page/:num/"
 
-# excerpt
-excerpt_separator: "\n\n\n\n"
+# Search settings
+baidu_search: true
+google_search: # true
 
-# paginate
-gems: [jekyll-paginate]
-paginate: 5
+# Menu settings
+menu:
+  - page: 首页
+    directory: .
+    icon: icon-home
+  - page: 归档
+    directory: archives/
+    icon: icon-archive
+  - page: 标签
+    directory: tags/
+    icon: icon-tags
+  - page: 留言
+    directory: guestbook/
+    icon: icon-guestbook
+  - page: 关于
+    directory: about/
+    icon: icon-about
+#  - page: 订阅
+#    directory: feed.xml
+#    icon: icon-rss
+
+
+
+#  - title:
+#    url: http://jekyllcn.com/
+  - title: Jekyll blog system
+    url: http://jekyllcn.com/
+
+
+# Google Analytics
+ga_track_id: 'UA-130856615-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto            # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
+
+
+valine:
+  enable: true
+  app_id:  K1rbn2Oo0YMM04VuzdLS7Nzz-gzGzoHsz
+  app_key: AAsHbwVm8ofKFJ6ghGqqrXSU
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  visitor: true
+  avatar: retro
+  placeholder: say something~~\n - 昵称 为你所要显示的评论的ID；\n - 邮箱 只有后台可见，仅供讨论过程中是否需要交流邮件而设置，请放心填写;\n - 网址 为你的评论的昵称的超链接。\n当然，以上都可以不写，评论依然会显示……
+  guest_info: nick,mail,link
+  pageSize: 10

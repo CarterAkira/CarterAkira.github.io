@@ -1,100 +1,88 @@
 ---
-layout: default
+layout: base
 ---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="page clearfix" post>
-    <div class="left">
-        <h1>{{page.title}}</h1>
-        <div class="label">
-
-            <div class="label-card">
-                <i class="fa fa-calendar"></i>{{ page.date | date: "%F" }}
-            </div>
-
-            <div class="label-card">
-                {% if page.author %}<i class="fa fa-user"></i>{{ page.author }}
-                {% endif %}
-            </div>
-
-            <div class="label-card">
-                {% if page.meta %}<i class="fa fa-key"></i>{{ page.meta }}  {% endif %}
-            </div>
-
-            <div class="label-card">
-            {% include category.html %}
-            </div>
-
-            <div class="label-card">
-            {% include tag.html %}
-            </div>
-
-        </div>
-        <hr>
-        <article itemscope itemtype="http://schema.org/BlogPosting">
-        {{content}}
-        </article>
-        <hr>
-        {% assign hasSimilar = '' %}
-        {% for post in site.related_posts %}
-            {% assign postHasSimilar = false %}
-            {% for tag in post.tags %}
-                {% for thisTag in page.tags %}
-                    {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
-                        {% if hasSimilar.size == 0 %}
-                        <h2 id="similar_posts">Similar Posts</h2>
-                        <ul>
-                        {% endif %}
-                        <li class="relatedPost">
-                            <a href="{{ site.url }}{{ post.url }}">{{ post.title }}
-                            {% if post.series %}
-                                (Series: {{ post.series }})
-                            {% endif %}
-                            </a>
-                        </li>
-                        {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-                        {% assign postHasSimilar = true %}
-                    {% endif %}
-                {% endfor %}
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                <i class="icon-post-date">{{ page.date | date: "%b %-d, %Y" }}</i>
+            </time>
+            {% if page.categories.size > 0 %} |
+            <span class="post-category">
+            <i class="icon-post-category">
+            {% for page_category in page.categories %}
+                <a href="{{ site.baseurl }}/category/#{{ page_category }}">{{ page_category }}</a>
             {% endfor %}
-        {% endfor %}
-        {% if hasSimilar.size > 0 %}
-            </ul>
+            </i>
+        </span> {% endif %} {% if page.tags.size > 0 %} |
+            <span class="post-tag">
+            <i class="icon-post-tag">
+            {% for page_tag in page.tags %}
+                <a href="{{ site.baseurl }}/tags/#{{ page_tag }}">{{ page_tag }}</a>
+            {% endfor %}
+            </i>
+        </span>{% endif %}
+
+
+            <!-- 阅读量统计， id 将作为查询条件 -->
+            <span id={{page.url}} class="leancloud-visitors" data-flag-title={{page.title}}>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-text">阅读量 </span>
+                <span class="leancloud-visitors-count"></span>
+            </span>
+        </p>
+
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
+
+    <div id="donate" >
+        <a href="/donate/" style="text-decoration: none" title="点击直达打赏页面～" >
+            <button>客官~对小店满意的话，<mark>赏个铜板</mark>再走啊🐼</button>
+        </a>
+    </div>
+
+
+    <div class="post-nav">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | prepend: site.baseurl }}" class="pre"><i class="icon-post-pre"> {{
+            page.previous.title }}</i></a>
+        {% endif %} {% if page.next %}
+        <a href="{{ page.next.url | prepend: site.baseur }}" class="next">{{ page.next.title }} <i
+                class="icon-post-next"></i></a>
         {% endif %}
-
-
-        <h2 id="comments">Comments</h2>
-        {% include comments.html %}
-
-
     </div>
-    <button class="anchor"><i class="fa fa-anchor"></i></button>
-    <div class="right">
-        <div class="wrap">
 
-            <!-- Content -->
-            <div class="side content">
-                <div>
-                    Content
-                </div>
-                <ul id="content-side" class="content-ul">
-                    <li><a href="#similar_posts">Similar Posts</a></li>
-                    <li><a href="#comments">Comments</a></li>
-                </ul>
-            </div>
-            <!-- 其他div框放到这里 -->
-            <!-- <div class="side">bbbb</div> -->
-        </div>
-    </div>
-</div>
-<script>
-/**
- * target _blank
- */
-(function() {
-    var aTags = document.querySelectorAll('article a:not([id])')
-    for (var i = 0; i < aTags.length; i++) {
-        aTags[i].setAttribute('target', '_blank')
-    }
-}());
-</script>
-<script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script>
+
+    <!--valine comment function-->
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+    <p><br/>既已览卷至此，何不品评一二：</p>
+    <div id="valine_comment" class="fb_comments_container"></div>
+    <script>
+        var notify = '{{site.valine.notify}}' === true;
+        var verify = '{{site.valine.verify}}.>' === true;
+        var visitor = '{{site.valine.visitor}}.>' === true;
+
+        new Valine({
+            av: AV,
+            el: '#valine_comment',
+            notify: notify,
+            verify: verify,
+            // smiles_url: '/smiles',
+            visitor: true,
+            app_id: '{{site.valine.app_id}}',
+            app_key: '{{site.valine.app_key}}',
+            placeholder: '{{site.valine.placeholder}}',
+            avatar: '{{site.valine.avatar}}',
+        });
+    </script>
+
+
+</article>
