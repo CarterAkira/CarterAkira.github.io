@@ -1,76 +1,41 @@
 # Site settings
-title: madaoheki的仓库
-subtitle: 翻译和一些随笔
-keywords: 
-description: 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.madaoheki.github.io" # 你的域名
-
-# Build settings
-permalink: /:year/:month/:day/:title/
-exclude: ["README.md", "changelog.md", "server", "tools", "Pipfile"]
-plugins:
-  - jekyll-paginate
-  - jemoji
-
-
-# always get github's error email saying redcarpet is not supported,
-# so change it to kramdown.
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-
-
-# Pageinate settings
-paginate: 8 # 分页大小
-paginate_path: "page/:num/"
-
-# Search settings
-baidu_search: true
-google_search: # true
-
-# Menu settings
-menu:
-  - page: 首页
-    directory: .
-    icon: icon-home
-  - page: 归档
-    directory: archives/
-    icon: icon-archive
-  - page: 标签
-    directory: tags/
-    icon: icon-tags
-  - page: 留言
-    directory: guestbook/
-    icon: icon-guestbook
-#  - page: 订阅
-#    directory: feed.xml
-#    icon: icon-rss
-
-
-
-#  - title:
-#    url: http://jekyllcn.com/
-  - title: Jekyll blog system
-    url: http://jekyllcn.com/
-
+title:          madaoheki的仓库
+description:    "Minimal Jekyll theme for storytellers"
+baseurl:        "/tale"
+url:            "https://madaoheki.github.io"
 
 # Google Analytics
-ga_track_id: 'UA-130856615-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto            # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+google_analytics: UA—XXXXXXXX-X
 
+# Author
+author:
+  name:       madaoheki
+  url:            none
+  email:       none
 
+# Build settings
+markdown:       kramdown
+include:
+  - _pages
 
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
-valine:
-  enable: true
-  app_id:  K1rbn2Oo0YMM04VuzdLS7Nzz-gzGzoHsz
-  app_key: AAsHbwVm8ofKFJ6ghGqqrXSU
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  visitor: true
-  avatar: retro
-  placeholder: say something~~\n - 昵称 为你所要显示的评论的ID；\n - 邮箱 只有后台可见，仅供讨论过程中是否需要交流邮件而设置，请放心填写;\n - 网址 为你的评论的昵称的超链接。\n当然，以上都可以不写，评论依然会显示……
-  guest_info: nick,mail,link
-  pageSize: 10
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+
+# Excludes
+exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
+
+# Disqus (Set to your disqus id)
+disqus:         jekyll-tale
