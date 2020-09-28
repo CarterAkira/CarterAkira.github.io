@@ -1,40 +1,48 @@
-# Site settings
-title:         madaoheki的仓库
-description:    "翻译和一些随笔."
-url:            https://madaoheki.github.io
+plugins: [jekyll-paginate]
 
-# Author
-author:
-  name:         Inela Avdic Hukic
-  email:        inelaah@gmail.com
-  url:          https://inelaah.com
+permalink: /:categories/:title/
 
-# Build settings
-markdown:       kramdown
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input:  GFM
+  syntax_highlighter: rouge
 
-# Assets
-sass:
-  sass_dir:     _sass
-  style:        compressed
 
-# Gems
-plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  # - jemoji #Uncomment this to allow emoji in your post
+paginate: 10
+paginate_path: "page/:num"
+baseurl: ""
 
-# Permalinks
-permalink:      /:year-:month-:day/:title
-paginate:       5
 
-# Related posts settings
-related_posts_section:
-  max_count:        5
-  min_common_tags:  2
 
-# Links to social media
-social:
-  email: 
-  github: 
-  twitter: 
-  linkedin:
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      styles : [highlight.css,gitment.css,post.css]
+      scripts : [gitment.js, post.js]
+
+
+
+title: "madaoheki的仓库"
+email: 
+description: ""
+github:
+  username: bit-ranger
+swiftype:
+  searchId: iXZyPokVfxFaBTvi64Y6
+gitment:
+    repo: blog
+    client_id: a6fb73b3e790e234bab8
+    client_secret: cc10aaff53a03d05ab2ee002dbf401dd7627c7a3
+
+url: "https://bit-ranger.github.io/blog"
+imgrepo: "https://bit-ranger.github.io/blog/static/img"
+
+
+#url: "http://127.0.0.1:4000"
+#imgrepo: "http://127.0.0.1:4000/static/img"
+
