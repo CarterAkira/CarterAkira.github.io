@@ -1,13 +1,10 @@
 # Site settings
 title: madaoheki的仓库
-subtitle: 
+subtitle: 翻译和一些随笔
 keywords: 
 description: 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.madaoheki.github.io" # 你的域名
-page_no_title: "oukohou's blog" # 文章无标题时默认显示内容
-
-
 
 # Build settings
 permalink: /:year/:month/:day/:title/
