@@ -1,84 +1,82 @@
-# Jekyll-Jacman
+# 介绍
 
-**中文 | [English](/README_en.md)**
+[![Language](https://img.shields.io/badge/Jekyll-Theme-blue)](https://github.com/TMaize/tmaize-blog)
+[![license](https://img.shields.io/github/license/TMaize/tmaize-blog)](https://github.com/TMaize/tmaize-blog)
+[![GitHub stars](https://img.shields.io/github/stars/TMaize/tmaize-blog?style=social)](https://github.com/TMaize/tmaize-blog)
 
-Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
+一款 jekyll 主题（[GitHub 地址](https://github.com/TMaize/tmaize-blog)），简洁纯净(主题资源请求<20KB)，未引入任何框架，秒开页面，支持自适应，支持全文检索，支持夜间模式
 
- * [主题演示](http://simpleyyt.github.io/jekyll-jacman/)
- * [如何使用 Jacman 主题](http://simpleyyt.github.io/jekyll-jacman/jekyll/2015/09/20/how-to-use-jacman)
+你可以到[TMaize Blog](http://blog.tmaize.net/)查看主题效果，欢迎添加友链
 
-## 本地搭建
+## 感谢
 
-确保已安装`Ruby 2.1.0` 或更高版本：
+[JetBrains](https://www.jetbrains.com/?from=tmaize-blog) 免费提供的开发工具[![JetBrains](./static/img/jetbrains.svg)](https://www.jetbrains.com/?from=tmaize-blog)
 
-```sh
-ruby --version
-```
+[夜间模式代码高亮配色]](https://github.com/mgyongyosi/OneDarkJekyll)
 
-安装`Bundler`：
+# 本地运行
 
-```sh
+一般提交到 github 过个几十秒就可以看到效果，如果你需要对在本地查看效果需要安装 ruby 环境和依赖
+
+```bash
+# linux下需要gcc
+
+# gem sources --add https://gems.ruby-china.com/
+# gem sources --remove https://rubygems.org/
+# gem sources --remove https://mirrors.aliyun.com/rubygems/
+# gem sources -l
 gem install bundler
-```
-
-下载 Jacman 主题：
-
-```sh
-git clone https://github.com/Simpleyyt/jekyll-jacman.git
-cd jekyll-jacman
-```
-
-安装依赖：
-
-```sh
+# bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 bundle install
 ```
 
-运行 Jekyll：
+通过下面命令启动/编译项目
 
-```sh
-bundle exec jekyll server
+```bash
+bundle exec jekyll serve --watch --host=127.0.0.1 --port=8080
+bundle exec jekyll build --destination=dist
 ```
 
-更多细节可以参考：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+如果需要替换代码高亮的样式可以通过下面的命令生成 css
 
-## 功能
+```bash
+rougify help style
+rougify style github > highlighting.css
+```
 
-- **菜单 menu**  
- 主导航菜单
-- **控件 widget**  
- 侧边栏的控件。包括：Github 名片	、分类、标签、RSS、友情链接、微博秀。
-- **图片相关 Image**  
- 设置网站图标、网站logo、作者头像、博客顶部大图等。还提供了多种图片样式`img-logo`,`img-topic`,`img-center`等。
-- **首页模式 index**  
- 主题提供了两种首页展示模式。
-- **作者 author**  
- 作者信息，主要用于展示网站右下角的社交网络链接。包括：微博、豆瓣、知乎、邮箱、GitHub、StackOverflow、Twitter、Facebook、Linkedin、Google+。
-- **目录 toc**  
- 在文章中和侧边栏可以显示目录。
-- **评论 comments**  
- 支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
-- **分享 jiathis**  
- 启用 内建分享工具 或 [加网](http://www.jiathis.com/) 分享系统。
-- **网站统计 Analytiscs**  
- 支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
-- **Search**  
- 支持 [谷歌自定义搜索](https://www.google.com/cse/ ) & [百度站内搜索](http://zn.baidu.com/)  &[微搜索](http://tinysou.com/)。 &[Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)
-- **totop**  
- 回到顶部。
-- **rss**  
- RSS 订阅链接。
-- **fancybox**  
- 图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
-- **其他**
- 你可以设置侧边栏在博文页面中不显示。
+# 项目配置
 
-## 协议
+1. 如果使用自己的域名，`CNAME`文件里的内容请换成你自己的域名，然后 CNAME 解析到`用户名.github.com`
 
-[MIT](/LICENSE)
+2. 如果使用 GitHub 的的域名，请删除`CNAME`文件,然后把你的项目修改为`用户名.github.io`
 
-## 捐赠
+3. 修改`pages/about.md`中关于我的内容
 
-支付宝捐赠链接还是要有的，万一真的有人捐呢。
+4. 修改`_config.yml`文件，具体作用请参考注释
 
-![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
+5. 清空`post _posts`目录下所有文件，注意是清空，不是删除这两个目录
+
+6. 网站的 logo 和 favicon 放在了`static/img/`下，替换即可，大小无所谓，图片比例最好是 1:1
+
+7. 如果你是把项目 fork 过去的，想要删除我的提交记录可以先软重置到第一个提交，然后再提交一次，最后强制推送一次就行了
+
+# 使用
+
+文章放在`_posts`目录下，命名为`yyyy-MM-dd-xxxx-xxxx.md`，内容格式如下
+
+```yaml
+---
+layout: mypost
+title: 标题
+categories: [分类1, 分类2]
+---
+文章内容，Markdown格式
+```
+
+文章资源放在`posts`目录，如文章文件名是`2019-05-01-theme-usage.md`，则该篇文章的资源需要放在`posts/2019/05/01`下,在文章使用时直接引用即可。当然了，写作的时候会提示资源不存在忽略即可
+
+```md
+![这是图片](xxx.png)
+
+[xxx.zip 下载](xxx.zip)
+```
