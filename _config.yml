@@ -54,9 +54,6 @@ widgets:
 - category
 - tag
 - tagcloud
-- links
-- douban
-- github-card
 ## provide seven widgets:github-card,category,tag,rss,archive,tagcloud,links,weibo,douban
 
 #### Image
