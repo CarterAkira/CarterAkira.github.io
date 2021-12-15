@@ -3,7 +3,7 @@ encoding: utf-8
 # SEO相关信息
 title: 杂物库
 description: 收藏杂物
-keywords: 
+keywords:
 author: Anonymous
 footerText:
 
@@ -17,7 +17,7 @@ exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.
 
 # 域名配置
 # baseurl配置,如果网站部署在根目录下的其他目录中，请设置为 /目录名
-domainUrl: 
+domainUrl:
 baseurl: ''
 
 # 吐个槽地址，会在chat页面中重定向到该地址
@@ -51,3 +51,8 @@ extMath: false
 
 # 友情链接
 links:
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
