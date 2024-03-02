@@ -34,6 +34,7 @@
   flex-shrink: 0;
   padding: 3px 0;
   margin-left: 10px;
+  word-wrap:break-word
 }
 .list-post li .categories a {
   font-size: 22px;
