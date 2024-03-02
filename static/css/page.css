@@ -8,7 +8,6 @@
   padding-left: 15px;
 }
 .list-post li {
-  list-style-type: disc;
   display: flex;
   align-items: center;
   padding: 8px 0;
