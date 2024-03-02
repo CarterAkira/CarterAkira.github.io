@@ -19,7 +19,8 @@
   margin-right: 10px;
 }
 .list-post li .title {
-  width: 0;
+  width: 100%;
+  float: left;
   flex-grow: 1;
   padding: 4px 0;
   white-space: normal;
@@ -30,6 +31,8 @@
   font-size: 22px;
 }
 .list-post li .categories {
+  width: 100%;
+  float: left;
   flex-shrink: 0;
   padding: 3px 0;
   margin-left: 10px;
@@ -37,6 +40,8 @@
   white-space: normal;
 }
 .list-post li .categories a {
+  width: 100%;
+  float: left;
   font-size: 22px;
   color: #666666;
   margin-left: 8px;
@@ -44,6 +49,8 @@
   white-space: normal;
 }
 .list-category h2 {
+  width: 100%;
+  float: left;
   font-size: 20px;
   font-weight: bold;
   padding: 12px 0;
