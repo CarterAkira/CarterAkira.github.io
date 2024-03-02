@@ -27,7 +27,7 @@
 
 .list-post li .title {
   order: 2;
-  flex-grow: 1;
+  flex-shrink: 0;
   padding: 4px 0;
   white-space: nowrap;
   overflow: visible;
@@ -40,7 +40,7 @@
 
 .list-post li .categories {
   order: 1;
-  flex-shrink: 0;
+  flex-grow: 1;
   padding: 3px 0;
   margin-left: 10px;
 }
