@@ -11,8 +11,9 @@
 
 .list-post li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap-reverse;
+  justify-content:space-between;
   padding: 8px 0;
 }
 
