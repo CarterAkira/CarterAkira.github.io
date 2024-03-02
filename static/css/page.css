@@ -29,8 +29,8 @@
   width: 100%;
   order: 2;
   padding: 4px 0;
-  white-space: nowrap;
-  overflow: visible;
+  white-space: normal;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
