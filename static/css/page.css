@@ -22,10 +22,9 @@
   width: 0;
   flex-grow: 1;
   padding: 4px 0;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  word-wrap:break-word
 }
 .list-post li .title a {
   font-size: 22px;
@@ -34,17 +33,22 @@
   flex-shrink: 0;
   padding: 3px 0;
   margin-left: 10px;
-  word-wrap:break-word
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .list-post li .categories a {
   font-size: 22px;
   color: #666666;
   margin-left: 8px;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .list-category h2 {
   font-size: 20px;
   font-weight: bold;
   padding: 12px 0;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 .list-category div {
   padding: 8px 0 8px 10px;
