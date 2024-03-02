@@ -7,12 +7,6 @@
   align-items: center;
   padding: 8px 0;
 }
-.list-post li .date {
-  color: #666666;
-  font-size: 20px;
-  flex-shrink: 0;
-  margin-right: 10px;
-}
 .list-post li .title {
   width: 0;
   flex-grow: 1;
@@ -20,10 +14,18 @@
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-break: break-all;
 }
 .list-post li .title a {
   font-size: 22px;
 }
+.list-post li .date {
+  color: #666666;
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
 .list-post li .categories {
   flex-shrink: 0;
   padding: 3px 0;
