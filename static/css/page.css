@@ -131,6 +131,7 @@
   }
   .list-post li.title {
     white-space:normal;
+    width:0;
   }
   .list-post li .title a {
     font-size: 20px;
