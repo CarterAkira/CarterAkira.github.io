@@ -27,7 +27,6 @@
 
 .list-post li .title {
   order: 2;
-  flex-shrink: 0;
   padding: 4px 0;
   white-space: nowrap;
   overflow: visible;
