@@ -23,8 +23,9 @@
   flex-grow: 1;
   padding: 4px 0;
   white-space: nowrap;
-  overflow: scroll;
-  text-overflow: clip;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap:break-word
 }
 .list-post li .title a {
   font-size: 22px;
