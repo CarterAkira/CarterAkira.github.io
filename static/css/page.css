@@ -1,32 +1,6 @@
-<div class="card">
-  <div class="container">
-    <h4><b>.list-post.title > h2</b></h4> 
-    <p>.list-post li .date </p> 
-    <p>.list-post li .categories </p>
-  </div>
-</div>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
-  border-radius: 5px;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-.list-post > h2 {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 12px 0;
-}
 .list-post ul {
   box-sizing: border-box;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 .list-post li {
   display: flex;
