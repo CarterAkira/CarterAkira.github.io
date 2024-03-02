@@ -151,6 +151,7 @@
 @media screen and (max-width: 560px) {
   .page-post {
     font-size: 20px;
+    text-indent:40px;
   }
   .page-post pre code {
     font-size: 12px;
