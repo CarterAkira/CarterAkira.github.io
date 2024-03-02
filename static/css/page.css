@@ -9,7 +9,7 @@
 }
 .list-post li {
   list-style-type: disc;
-  display: list-item;
+  display: flex;
   align-items: center;
   padding: 8px 0;
 }
