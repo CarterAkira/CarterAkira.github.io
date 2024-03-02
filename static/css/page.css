@@ -1,23 +1,20 @@
+.list-post > h2 {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 0;
+}
+
 .list-post ul {
   box-sizing: border-box;
   padding-left: 10px;
 }
+
 .list-post li {
   display: flex;
   align-items: center;
   padding: 8px 0;
 }
-.list-post li .title {
-  width: 0;
-  flex-grow: 1;
-  padding: 4px 0;
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.list-post li .title a {
-  font-size: 22px;
-}
+
 .list-post li .date {
   color: #666666;
   font-size: 20px;
@@ -25,15 +22,26 @@
   margin-right: 10px;
 }
 
+.list-post li .title {
+  width: 0;
+  flex-grow: 1;
+  padding: 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-post li .title a {
+  font-size: 22px;
+}
+
 .list-post li .categories {
   flex-shrink: 0;
   flex-wrap: wrap;
   padding: 3px 0;
   margin-left: 10px;
-  text-overflow: ellipsis;
-  white-space: normal;
- 
 }
+
 .list-post li .categories a {
   font-size: 18px;
   color: #666666;
