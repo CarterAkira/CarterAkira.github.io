@@ -12,6 +12,7 @@
 .list-post li {
   display: flex;
   align-items: center;
+  flex-direction:column-reverse;
   padding: 8px 0;
 }
 
