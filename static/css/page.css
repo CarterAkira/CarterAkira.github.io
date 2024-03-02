@@ -20,12 +20,14 @@
   color: #666666;
   font-size: 20px;
   flex-shrink: 0;
+  order: 0;
   margin-right: 10px;
 }
 
 .list-post li .title {
   width: 0;
   flex-grow: 5;
+  order: 2;
   padding: 4px 0;
   white-space: nowrap;
   overflow: visible;
@@ -38,6 +40,7 @@
 
 .list-post li .categories {
   flex-shrink: 0;
+  order: 1;
   padding: 3px 0;
   margin-left: 10px;
 }
