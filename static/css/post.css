@@ -1,5 +1,4 @@
 .page-post {
-  -ms-text-size-adjust: 150%;
   font-size: 25px;
   line-height: 2;
   word-break: break-all;
@@ -151,7 +150,7 @@
 }
 @media screen and (max-width: 560px) {
   .page-post {
-    font-size: 13px;
+    font-size: 20px;
   }
   .page-post pre code {
     font-size: 12px;
